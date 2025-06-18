@@ -78,8 +78,8 @@ The `:manager:assembleDebug` task generates a debuggable server. You can attach 
 
 All code files in this project are licensed under Apache 2.0
 
-Under Apache 2.0 section 6, specifically:
+Under Apache 2.0 section 6, relating to trademarks, you are **FORBIDDEN** from using Shizuku trademarks unless displaying Shizuki itself, specifically:
 
-* You are **FORBIDDEN** to use `manager/src/main/res/mipmap*/ic_launcher*.png` image files, unless for displaying Shizuku itself.
+* `manager/src/main/res/mipmap*/ic_launcher*.png` image files.
 
-* You are **FORBIDDEN** to use `Shizuku` as app name or use `moe.shizuku.privileged.api` as application id or declare `moe.shizuku.manager.permission.*` permission.
+* `Shizuku` as app name or use `moe.shizuku.privileged.api` as Application ID.
