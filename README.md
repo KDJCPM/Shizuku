@@ -1,4 +1,5 @@
-# Shizuku
+https://github.com/RikkaApps/Shizuku.git
+good# Shizuku
 
 ## Background
 
