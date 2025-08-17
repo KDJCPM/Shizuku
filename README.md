@@ -1,3 +1,4 @@
+mobile
 # Shizuku
 
 ## Background
