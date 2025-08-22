@@ -1,0 +1,1 @@
+using system APIs directly with adb/root privileges from normal apps
