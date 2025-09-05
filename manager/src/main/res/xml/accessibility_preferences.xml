@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <SwitchPreference
+        android:key="accessibility_enabled"
+        android:title="@string/accessibility_service_setting_title"
+        android:summary="@string/accessibility_service_setting_description"
+        android:defaultValue="false" />
+        
+</PreferenceScreen>

@@ -159,6 +159,17 @@ With %1$s, in any terminal app, you can connect to and interact with the shell r
     <string name="toast_copied_to_clipboard">%s\nhas been copied to clipboard.</string>
     <string name="toast_copied_to_clipboard_with_text"><![CDATA[<b>%s</b> has been copied to clipboard.]]></string>
 
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_title">Auto-detect pairing code</string>
+    <string name="accessibility_service_description">Automatically detects the 6-digit pairing code from the system wireless debugging dialog and uses it for ADB pairing</string>
+    <string name="accessibility_service_setting_title">Enable automatic PIN detection</string>
+    <string name="accessibility_service_setting_description">Allow Shizuku to automatically detect and use pairing codes from the system wireless debugging dialog</string>
+    <string name="accessibility_permission_required_title">Accessibility Permission Required</string>
+    <string name="accessibility_permission_required_message">To automatically detect pairing codes, Shizuku needs accessibility permission. This allows Shizuku to read the 6-digit code from the system wireless debugging dialog.</string>
+    <string name="accessibility_permission_button">Grant Permission</string>
+    <string name="accessibility_permission_granted">Accessibility permission is granted</string>
+    <string name="accessibility_permission_denied">Accessibility permission is required for automatic pairing</string>
+
     <!-- Messages for legacy -->
     <string name="dialog_legacy_not_support_title">%1$s does not support modern Shizuku</string>
     <string name="dialog_legacy_not_support_message"><![CDATA[Legacy Shizuku has been deprecated since March 2019. Also, legacy Shizuku does not work on newer Android systems.<p>Please ask the developer of <b>%1$s</b> to update.]]></string>

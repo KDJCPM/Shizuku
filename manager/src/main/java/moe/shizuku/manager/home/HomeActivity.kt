@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Process
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.Menu
@@ -30,11 +31,13 @@ import rikka.shizuku.Shizuku
 abstract class HomeActivity : AppBarActivity() {
 
     private val binderReceivedListener = Shizuku.OnBinderReceivedListener {
+        Log.d("HomeActivity", "Binder received - refreshing status")
         checkServerStatus()
         appsModel.load()
     }
 
     private val binderDeadListener = Shizuku.OnBinderDeadListener {
+        Log.d("HomeActivity", "Binder dead - refreshing status")
         checkServerStatus()
     }
 
@@ -73,10 +76,12 @@ abstract class HomeActivity : AppBarActivity() {
 
     override fun onResume() {
         super.onResume()
+        Log.d("HomeActivity", "onResume - refreshing status")
         checkServerStatus()
     }
 
     private fun checkServerStatus() {
+        Log.d("HomeActivity", "checkServerStatus called - reloading model")
         homeModel.reload()
     }
 
