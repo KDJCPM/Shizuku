@@ -60,7 +60,7 @@ class HomeAdapter(private val homeModel: HomeViewModel, private val appsModel: A
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R || EnvironmentUtils.getAdbTcpPort() > 0) {
-                addItem(StartWirelessAdbViewHolder.CREATOR, null, ID_START_WADB)
+                addItem(StartWirelessAdbViewHolder.CREATOR, status, ID_START_WADB)
             }
 
             addItem(StartAdbViewHolder.CREATOR, null, ID_START_ADB)

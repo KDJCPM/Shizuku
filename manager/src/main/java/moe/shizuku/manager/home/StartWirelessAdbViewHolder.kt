@@ -5,9 +5,11 @@ import android.content.Intent
 import android.os.Build
 import android.os.SystemProperties
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentActivity
@@ -16,7 +18,9 @@ import moe.shizuku.manager.R
 import moe.shizuku.manager.adb.AdbPairingTutorialActivity
 import moe.shizuku.manager.databinding.HomeItemContainerBinding
 import moe.shizuku.manager.databinding.HomeStartWirelessAdbBinding
+import moe.shizuku.manager.home.WadbNotEnabledDialogFragment
 import moe.shizuku.manager.ktx.toHtml
+import moe.shizuku.manager.model.ServiceStatus
 import moe.shizuku.manager.starter.StarterActivity
 import moe.shizuku.manager.utils.CustomTabsHelper
 import moe.shizuku.manager.utils.EnvironmentUtils
@@ -26,11 +30,11 @@ import rikka.recyclerview.BaseViewHolder
 import rikka.recyclerview.BaseViewHolder.Creator
 import java.net.Inet4Address
 
-class StartWirelessAdbViewHolder(binding: HomeStartWirelessAdbBinding, root: View) :
-    BaseViewHolder<Any?>(root) {
+class StartWirelessAdbViewHolder(private val binding: HomeStartWirelessAdbBinding, root: View) :
+    BaseViewHolder<ServiceStatus?>(root) {
 
     companion object {
-        val CREATOR = Creator<Any> { inflater: LayoutInflater, parent: ViewGroup? ->
+        val CREATOR = Creator<ServiceStatus?> { inflater: LayoutInflater, parent: ViewGroup? ->
             val outer = HomeItemContainerBinding.inflate(inflater, parent, false)
             val inner = HomeStartWirelessAdbBinding.inflate(inflater, outer.root, true)
             StartWirelessAdbViewHolder(inner, outer.root)
@@ -62,9 +66,33 @@ class StartWirelessAdbViewHolder(binding: HomeStartWirelessAdbBinding, root: Vie
 
     override fun onBind(payloads: MutableList<Any>) {
         super.onBind(payloads)
+        
+        // Update button states based on Shizuku status
+        val isShizukuRunning = data?.isRunning == true
+        Log.d("StartWirelessAdb", "onBind called - isShizukuRunning: $isShizukuRunning, status: ${data}")
+        Log.d("StartWirelessAdb", "Button state before: enabled=${binding.button1.isEnabled}, alpha=${binding.button1.alpha}")
+        
+        // Disable start button if Shizuku is already running
+        binding.button1.isEnabled = !isShizukuRunning
+        binding.button1.alpha = if (isShizukuRunning) 0.5f else 1.0f
+        
+        Log.d("StartWirelessAdb", "Button state after: enabled=${binding.button1.isEnabled}, alpha=${binding.button1.alpha}")
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Keep pairing button enabled even if Shizuku is running
+            // (user might want to pair for other purposes)
+            binding.button2.isEnabled = true
+            binding.button3.isEnabled = true
+        }
     }
 
     private fun onAdbClicked(context: Context) {
+        // Check if Shizuku is already running
+        if (data?.isRunning == true) {
+            Toast.makeText(context, R.string.home_status_service_is_running, Toast.LENGTH_SHORT).show()
+            return
+        }
+        
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             AdbDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
             return
