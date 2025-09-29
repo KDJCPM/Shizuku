@@ -2,6 +2,7 @@ package moe.shizuku.manager.home
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Process
 import android.text.method.LinkMovementMethod
@@ -9,6 +10,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.FragmentActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import moe.shizuku.manager.R
 import moe.shizuku.manager.ShizukuSettings
@@ -18,7 +20,10 @@ import moe.shizuku.manager.databinding.HomeActivityBinding
 import moe.shizuku.manager.ktx.toHtml
 import moe.shizuku.manager.management.appsViewModel
 import moe.shizuku.manager.settings.SettingsActivity
+import moe.shizuku.manager.starter.StarterActivity
 import moe.shizuku.manager.utils.AppIconCache
+import moe.shizuku.manager.utils.EnvironmentUtils
+import rikka.core.content.asActivity
 import rikka.core.ktx.unsafeLazy
 import rikka.lifecycle.Status
 import rikka.lifecycle.viewModels
@@ -112,6 +117,27 @@ abstract class HomeActivity : AppBarActivity() {
                 MaterialAlertDialogBuilder(this)
                     .setView(binding.root)
                     .show()
+                true
+            }
+            R.id.action_start -> {
+                val context = this
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    AdbDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
+                    return true
+                }
+
+                val port = EnvironmentUtils.getAdbTcpPort()
+                if (port > 0) {
+                    val host = "127.0.0.1"
+                    val intent = Intent(context, StarterActivity::class.java).apply {
+                        putExtra(StarterActivity.EXTRA_IS_ROOT, false)
+                        putExtra(StarterActivity.EXTRA_HOST, host)
+                        putExtra(StarterActivity.EXTRA_PORT, port)
+                    }
+                    context.startActivity(intent)
+                } else {
+                    WadbNotEnabledDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
+                }
                 true
             }
             R.id.action_stop -> {
