@@ -119,6 +119,9 @@ With %1$s, in any terminal app, you can connect to and interact with the shell r
     <string name="action_about">About</string>
     <string name="about_view_source_code"><![CDATA[View source code at %s]]></string>
 
+    <!-- Start -->
+    <string name="action_start">Start Shizuku</string>
+
     <!-- Stop -->
     <string name="action_stop">Stop Shizuku</string>
     <string name="dialog_stop_message">Shizuku service will be stopped.</string>
