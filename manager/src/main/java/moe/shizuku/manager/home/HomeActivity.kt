@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import moe.shizuku.manager.R
 import moe.shizuku.manager.ShizukuSettings
+import moe.shizuku.manager.adb.AdbPairingTutorialActivity
 import moe.shizuku.manager.app.AppBarActivity
 import moe.shizuku.manager.databinding.AboutDialogBinding
 import moe.shizuku.manager.databinding.HomeActivityBinding
@@ -154,6 +155,19 @@ abstract class HomeActivity : AppBarActivity() {
                     }
                     .setNegativeButton(android.R.string.cancel, null)
                     .show()
+                true
+            }
+            R.id.action_pair -> {
+                val context = this
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && (context.display?.displayId ?: -1) > 0) {
+                    // Running in a multi-display environment (e.g., Windows Subsystem for Android),
+                    // pairing dialog can be displayed simultaneously with Shizuku.
+                    // Input from notification is harder to use under this situation.
+                    AdbPairDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
+                } else {
+                    context.startActivity(Intent(context, AdbPairingTutorialActivity::class.java))
+                }
+
                 true
             }
             R.id.action_settings -> {
