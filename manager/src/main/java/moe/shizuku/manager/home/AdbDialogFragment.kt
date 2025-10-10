@@ -83,10 +83,19 @@ class AdbDialogFragment : DialogFragment() {
             startAndDismiss(EnvironmentUtils.getAdbTcpPort())
         }
 
-        if (!(EnvironmentUtils.isTelevision(ActivityThread.currentActivityThread().application))) {
+        if (!(EnvironmentUtils.isTelevision(ActivityThread.currentActivityThread().application))){
             port.observe(this) {
                 if (it > 65535 || it < 1) return@observe
                 startAndDismiss(it)
+            }
+        }
+
+        if (EnvironmentUtils.isTelevision(ActivityThread.currentActivityThread().application)) {
+            if (EnvironmentUtils.getAdbTcpPort() != 5555) {
+                port.observe(this) {
+                    if (it > 65535 || it < 1) return@observe
+                    startAndDismiss(it)
+                }
             }
         }
     }
