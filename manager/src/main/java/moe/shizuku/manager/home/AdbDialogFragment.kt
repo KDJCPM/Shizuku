@@ -82,9 +82,14 @@ class AdbDialogFragment : DialogFragment() {
             startAndDismiss(EnvironmentUtils.getAdbTcpPort())
         }
 
-        port.observe(this) {
-            if (it > 65535 || it < 1) return@observe
-            startAndDismiss(it)
+        val packageManager = context.packageManager
+        val isTelevision = packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK)
+
+        if (!isTelevision) {
+            port.observe(this) {
+                if (it > 65535 || it < 1) return@observe
+                startAndDismiss(it)
+            }
         }
     }
 
