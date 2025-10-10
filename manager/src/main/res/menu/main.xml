@@ -8,8 +8,19 @@
         android:showAsAction="ifRoom"/>
 
     <item
+        android:id="@+id/action_start"
+        android:title="@string/action_start"
+        android:showAsAction="never"/>
+
+
+    <item
         android:id="@+id/action_stop"
         android:title="@string/action_stop"
+        android:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_pair"
+        android:title="@string/action_pair"
         android:showAsAction="never"/>
 
     <item

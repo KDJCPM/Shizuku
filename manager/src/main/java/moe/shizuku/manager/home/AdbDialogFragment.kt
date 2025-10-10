@@ -1,6 +1,7 @@
 package moe.shizuku.manager.home
 
 import android.Manifest.permission.WRITE_SECURE_SETTINGS
+import android.app.ActivityThread
 import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.DialogInterface
@@ -82,9 +83,20 @@ class AdbDialogFragment : DialogFragment() {
             startAndDismiss(EnvironmentUtils.getAdbTcpPort())
         }
 
-        port.observe(this) {
-            if (it > 65535 || it < 1) return@observe
-            startAndDismiss(it)
+        if (!(EnvironmentUtils.isTelevision(ActivityThread.currentActivityThread().application))){
+            port.observe(this) {
+                if (it > 65535 || it < 1) return@observe
+                startAndDismiss(it)
+            }
+        }
+
+        if (EnvironmentUtils.isTelevision(ActivityThread.currentActivityThread().application)) {
+            if (EnvironmentUtils.getAdbTcpPort() != 5555) {
+                port.observe(this) {
+                    if (it > 65535 || it < 1) return@observe
+                    startAndDismiss(it)
+                }
+            }
         }
     }
 

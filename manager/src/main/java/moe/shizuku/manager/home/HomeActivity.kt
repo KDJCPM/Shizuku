@@ -2,6 +2,7 @@ package moe.shizuku.manager.home
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Process
 import android.text.method.LinkMovementMethod
@@ -9,16 +10,21 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.FragmentActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import moe.shizuku.manager.R
 import moe.shizuku.manager.ShizukuSettings
+import moe.shizuku.manager.adb.AdbPairingTutorialActivity
 import moe.shizuku.manager.app.AppBarActivity
 import moe.shizuku.manager.databinding.AboutDialogBinding
 import moe.shizuku.manager.databinding.HomeActivityBinding
 import moe.shizuku.manager.ktx.toHtml
 import moe.shizuku.manager.management.appsViewModel
 import moe.shizuku.manager.settings.SettingsActivity
+import moe.shizuku.manager.starter.StarterActivity
 import moe.shizuku.manager.utils.AppIconCache
+import moe.shizuku.manager.utils.EnvironmentUtils
+import rikka.core.content.asActivity
 import rikka.core.ktx.unsafeLazy
 import rikka.lifecycle.Status
 import rikka.lifecycle.viewModels
@@ -114,6 +120,27 @@ abstract class HomeActivity : AppBarActivity() {
                     .show()
                 true
             }
+            R.id.action_start -> {
+                val context = this
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    AdbDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
+                    return true
+                }
+
+                val port = EnvironmentUtils.getAdbTcpPort()
+                if (port > 0) {
+                    val host = "127.0.0.1"
+                    val intent = Intent(context, StarterActivity::class.java).apply {
+                        putExtra(StarterActivity.EXTRA_IS_ROOT, false)
+                        putExtra(StarterActivity.EXTRA_HOST, host)
+                        putExtra(StarterActivity.EXTRA_PORT, port)
+                    }
+                    context.startActivity(intent)
+                } else {
+                    WadbNotEnabledDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
+                }
+                true
+            }
             R.id.action_stop -> {
                 if (!Shizuku.pingBinder()) {
                     return true
@@ -128,6 +155,19 @@ abstract class HomeActivity : AppBarActivity() {
                     }
                     .setNegativeButton(android.R.string.cancel, null)
                     .show()
+                true
+            }
+            R.id.action_pair -> {
+                val context = this
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && (context.display?.displayId ?: -1) > 0) {
+                    // Running in a multi-display environment (e.g., Windows Subsystem for Android),
+                    // pairing dialog can be displayed simultaneously with Shizuku.
+                    // Input from notification is harder to use under this situation.
+                    AdbPairDialogFragment().show(context.asActivity<FragmentActivity>().supportFragmentManager)
+                } else {
+                    context.startActivity(Intent(context, AdbPairingTutorialActivity::class.java))
+                }
+
                 true
             }
             R.id.action_settings -> {
