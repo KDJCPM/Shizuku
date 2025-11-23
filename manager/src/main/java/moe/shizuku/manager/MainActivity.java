@@ -1,6 +1,6 @@
-package moe.shizuku.manager;
+package moe.rhizuku.manager;
 
-import moe.shizuku.manager.home.HomeActivity;
+import moe.rhizuku.manager.home.HomeActivity;
 
 public class MainActivity extends HomeActivity {
 }

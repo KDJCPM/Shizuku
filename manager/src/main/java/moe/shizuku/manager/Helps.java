@@ -1,6 +1,6 @@
-package moe.shizuku.manager;
+package moe.rhizuku.manager;
 
-import moe.shizuku.manager.utils.MultiLocaleEntity;
+import moe.rhizuku.manager.utils.MultiLocaleEntity;
 
 public class Helps {
 

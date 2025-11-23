@@ -1,4 +1,4 @@
-package moe.shizuku.manager;
+package moe.rhizuku.manager;
 
 public class AppConstants {
 
@@ -9,6 +9,6 @@ public class AppConstants {
     public static final int NOTIFICATION_ID_STATUS = 1;
     public static final int NOTIFICATION_ID_WORK = 2;
 
-    private static final String PACKAGE = "moe.shizuku.manager";
+    private static final String PACKAGE = "moe.rhizuku.manager";
     public static final String EXTRA = PACKAGE + ".extra";
 }

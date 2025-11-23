@@ -1,4 +1,4 @@
-package moe.shizuku.common.util;
+package moe.rhizuku.common.util;
 
 import android.os.Build;
 

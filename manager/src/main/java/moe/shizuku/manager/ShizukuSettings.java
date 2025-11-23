@@ -1,4 +1,4 @@
-package moe.shizuku.manager;
+package moe.rhizuku.manager;
 
 import android.app.ActivityThread;
 import android.content.Context;
@@ -14,8 +14,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import java.lang.annotation.Retention;
 import java.util.Locale;
 
-import moe.shizuku.manager.utils.EmptySharedPreferencesImpl;
-import moe.shizuku.manager.utils.EnvironmentUtils;
+import moe.rhizuku.manager.utils.EmptySharedPreferencesImpl;
+import moe.rhizuku.manager.utils.EnvironmentUtils;
 
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 

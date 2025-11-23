@@ -1,9 +1,9 @@
-package moe.shizuku.manager
+package moe.rhizuku.manager
 
 import android.os.Bundle
 import androidx.core.os.bundleOf
-import moe.shizuku.api.BinderContainer
-import moe.shizuku.manager.utils.Logger.LOGGER
+import moe.rhizuku.api.BinderContainer
+import moe.rhizuku.manager.utils.Logger.LOGGER
 import rikka.shizuku.Shizuku
 import rikka.shizuku.ShizukuApiConstants.USER_SERVICE_ARG_TOKEN
 import rikka.shizuku.ShizukuProvider
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeoutException
 class ShizukuManagerProvider : ShizukuProvider() {
 
     companion object {
-        private const val EXTRA_BINDER = "moe.shizuku.privileged.api.intent.extra.BINDER"
+        private const val EXTRA_BINDER = "moe.rhizuku.privileged.api.intent.extra.BINDER"
         private const val METHOD_SEND_USER_SERVICE = "sendUserService"
     }
 
