@@ -11,7 +11,7 @@ import android.util.Pair;
 
 import java.util.Locale;
 
-import moe.shizuku.api.BinderContainer;
+import moe.rhizuku.api.BinderContainer;
 import moe.shizuku.starter.util.IContentProviderCompat;
 import rikka.hidden.compat.ActivityManagerApis;
 import rikka.shizuku.ShizukuApiConstants;
