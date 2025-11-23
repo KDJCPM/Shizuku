@@ -40,10 +40,10 @@ import java.util.List;
 import java.util.Objects;
 
 import kotlin.collections.ArraysKt;
-import moe.shizuku.api.BinderContainer;
-import moe.shizuku.common.util.BuildUtils;
-import moe.shizuku.common.util.OsUtils;
-import moe.shizuku.server.IShizukuApplication;
+import moe.rhizuku.api.BinderContainer;
+import moe.rhizuku.common.util.BuildUtils;
+import moe.rhizuku.common.util.OsUtils;
+import moe.rhizuku.server.IShizukuApplication;
 import rikka.hidden.compat.ActivityManagerApis;
 import rikka.hidden.compat.DeviceIdleControllerApis;
 import rikka.hidden.compat.PackageManagerApis;
@@ -444,7 +444,7 @@ public class ShizukuService extends Service<ShizukuUserServiceManager, ShizukuCl
                 if (flags != 0) {
                     list.add(pi);
                 } else if (pi.applicationInfo.metaData != null
-                        && pi.applicationInfo.metaData.getBoolean("moe.shizuku.client.V3_SUPPORT", false)
+                        && pi.applicationInfo.metaData.getBoolean("moe.rhizuku.client.V3_SUPPORT", false)
                         && pi.requestedPermissions != null
                         && ArraysKt.contains(pi.requestedPermissions, PERMISSION)) {
                     list.add(pi);
@@ -557,7 +557,7 @@ public class ShizukuService extends Service<ShizukuUserServiceManager, ShizukuCl
             }
 
             Bundle extra = new Bundle();
-            extra.putParcelable("moe.shizuku.privileged.api.intent.extra.BINDER", new BinderContainer(binder));
+            extra.putParcelable("moe.rhizuku.privileged.api.intent.extra.BINDER", new BinderContainer(binder));
 
             Bundle reply = IContentProviderUtils.callCompat(provider, null, name, "sendBinder", null, extra);
             if (reply != null) {
