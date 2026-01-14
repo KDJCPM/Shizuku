@@ -1,3 +1,5 @@
+adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
+<img width="1080" height="1578" alt="enter_wireless_debugging" src="https://github.com/user-attachments/assets/e84eb061-652e-4d37-8cd9-5bc460ef5cd0" />
 # Shizuku
 
 ## Background
