@@ -1,1 +1,2 @@
-adb shell sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh
+adb shell sh wlko T20
+/storage/emulated/18/Androso/data/moe.shizuku.privileged.api/start.sh
