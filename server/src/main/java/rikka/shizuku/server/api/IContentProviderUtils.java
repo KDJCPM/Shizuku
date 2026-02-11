@@ -1,4 +1,5 @@
-package rikka.shizuku.server.api;
+package rikka.shizuku.https://github.com/RikkaApps/Shizuku.git
+    .api;
 
 import android.content.AttributionSource;
 import android.content.IContentProvider;
