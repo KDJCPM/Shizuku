@@ -86,7 +86,7 @@ class StartWirelessAdbViewHolder(binding: HomeStartWirelessAdbBinding, root: Vie
 
     @RequiresApi(Build.VERSION_CODES.R)
     private fun onPairClicked(context: Context) {
-        if ((context.display?.displayId ?: -1) > 0) {
+        if ((context.display?.displayId ?: -1) > 0 || context.asActivity<FragmentActivity>()?.isInMultiWindowMode == true) {
             // Running in a multi-display environment (e.g., Windows Subsystem for Android),
             // pairing dialog can be displayed simultaneously with Shizuku.
             // Input from notification is harder to use under this situation.
