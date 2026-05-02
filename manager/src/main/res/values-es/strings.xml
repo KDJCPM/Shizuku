@@ -32,7 +32,7 @@
 \n
 \nTal vez necesite reiniciar Shizuku para que la operación surta efecto.</string>
     <string name="home_terminal_title">Usar Shizuku en la consola de comandos</string>
-    <string name="home_terminal_description">Ejecute comandos atravez de Shizuku en las aplicaciones de terminal que mas le gusten</string>
+    <string name="home_terminal_description">Ejecute comandos a través de Shizuku en las aplicaciones de terminal que mas le gusten</string>
     <string name="home_adb_is_limited_title">Necesitas dar un paso más</string>
     <string name="dialog_adb_pairing_title">Emparejar con dispositivo</string>
     <string name="dialog_adb_pairing_discovery">Buscando servicio de emparejamiento</string>
@@ -60,7 +60,7 @@
     <string name="dialog_adb_discovery_message_toggle_wireless_debugging">Por favor, intente deshabilitar y volver a habilitar \"Depuración inalámbrica\" si es que no deja de seguir en búsqueda.</string>
     <string name="dialog_wireless_adb_not_enabled">La Depuración inalámbrica no esta habilitada.
 \nNota, versiones anteriores a Android 11, para habilitar depuración inalámbrica, la conexión a una computadora es requerida.</string>
-    <string name="dialog_adb_pairing_message">Por favor empiece el vinculamiento con los siguientes pasos: \"Opciones para desarrolladores\" - \"Depuración inalámbrica\" - \"Vincular dispositivo con código de sincronización\".
+    <string name="dialog_adb_pairing_message">Por favor empiece la vinculación con los siguientes pasos: \"Opciones para desarrolladores\" - \"Depuración inalámbrica\" - \"Vincular dispositivo con código de sincronización\".
 \n
 \nDespués de que el proceso de vinculación empiece, usted podrá introducir el código de sincronización\".</string>
     <string name="adb_pairing_tutorial_content_notification">Una notificación de Shizuku te ayudará a completar la vinculación.</string>
