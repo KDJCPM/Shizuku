@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shizuku</string>
+
+    <!-- 主页 · 状态 -->
+    <string name="home_status_service_is_running">%1$s 正在给本喵打工喵~ (=^・ω・^=)</string>
+    <string name="home_status_service_not_running">%1$s 在摸鱼喵…本喵很失望喵 :C</string>
+    <string name="home_status_service_version">版本 %2$s 喵，%1$s 喵</string>
+    <string name="home_status_service_version_update"><![CDATA[版本 %2$s 喵，%1$s 喵。<br>重启一下就能更新到 %3$s 喵，快去喵！]]></string>
+
+    <!-- 主页 · ADB 启动 -->
+    <string name="home_adb_title">连上电脑才能启动喵！</string>
+    <string name="home_adb_description">铲屎官的手机没有 root 喵，要用 ADB 才能启动 %1$s 喵。每次重启都要再来一遍喵，辛苦铲屎官了喵~</string>
+    <string name="home_adb_button_view_help">看看帮助喵</string>
+    <string name="home_adb_button_view_help">看看帮助喵</string>
+    <string name="home_adb_button_view_command">看看命令喵</string>
+    <string name="home_adb_dialog_view_command_message"><![CDATA[在电脑终端里敲这个命令喵：<br><br><font face="monospace">%1$s</font><br><br>* 注意几件事喵：<br>…]]></string>
+    <string name="home_adb_dialog_view_command_copy_button">抄走喵！</string>
+    <string name="home_adb_dialog_view_command_button_send">发过去喵！</string>
+
+    <!-- 主页 · 无线调试 -->
+    <string name="home_wireless_adb_title">无线调试启动喵！</string>
+    <string name="home_wireless_adb_description">Android 11 以上可以用无线调试启动 %1$s 喵，不用连电脑喵，太方便了喵！本喵很开心喵 (=^・ω・^=)</string>
+    <string name="home_wireless_adb_description_pre_11">Android 11 之前要先连电脑才能开无线调试喵，好麻烦喵 :(</string>
+    <string name="home_wireless_adb_view_guide_button">跟着步骤走喵</string>
+
+    <!-- 无线调试对话框 -->
+    <string name="dialog_adb_discovery">正在找无线调试服务喵…稍等喵~</string>
+    <string name="dialog_adb_discovery_message">请去「开发者选项」打开「无线调试」喵。找不到的话试试关了再开喵。</string>
+    <string name="dialog_adb_port">端口喵</string>
+    <string name="dialog_adb_invalid_port">端口要填 1 到 65535 之间的数字喵！不要乱填喵！(｀Д´)ノ</string>
+
+    <!-- 配对 -->
+    <string name="adb_pairing">配对喵</string>
+    <string name="dialog_adb_pairing_title">和设备配对喵</string>
+    <string name="dialog_adb_pairing_discovery">正在找配对服务喵…</string>
+    <string name="dialog_adb_pairing_paring_code">配对码喵</string>
+    <string name="paring_code_is_wrong">配对码不对喵！铲屎官再检查一下喵 :(</string>
+    <string name="dialog_adb_pairing_cannot_connect">连不上无线调试服务喵…本喵很沮丧喵 :(</string>
+    <string name="dialog_adb_pairing_not_started">无线调试还没开喵！注意：Android 11 之前要先连电脑喵。</string>
+    <string name="dialog_adb_pairing_message">按这个顺序操作喵：「开发者选项」→「无线调试」→「使用配对码配对设备」喵。</string>
+    <string name="dialog_adb_pairing_split_screen">先进分屏模式喵！</string>
+    <string name="dialog_adb_pairing_split_screen_message">系统要求配对框一直显示喵，所以要用分屏喵，没办法喵 :(</string>
+    <string name="dialog_adb_pairing_key_store_error">没法生成无线调试密钥喵…可能是密钥库有什么问题喵。</string>
+    <string name="dialog_adb_pairing_start_first">先把配对步骤做完喵！不要着急喵~ ฅ^・ω・^ฅ</string>
+
+    <!-- 配对通知 -->
+    <string name="notification_adb_pairing_title">配对喵</string>
+    <string name="notification_adb_pairing_channel_name">无线调试配对喵</string>
+    <string name="notification_adb_pairing_message">%1$s 的通知会帮铲屎官配对喵~</string>
+    <string name="notification_adb_pairing_step_1">去「开发者选项」→「无线调试」，点「使用配对码配对设备」喵。</string>
+    <string name="notification_adb_pairing_step_2">在通知里输入配对码就能配对了喵！别忘了喵！</string>
+    <string name="notification_adb_pairing_warning">配对过程中要和 %1$s 的通知互动喵！千万别把通知藏起来喵！不然就白忙活了喵！(｀Д´)ノ</string>
+    <string name="notification_adb_pairing_miui_warning">MIUI 用户可能要把通知样式从「通知栏」改成「Android」喵。</string>
+    <string name="notification_adb_pairing_miui_warning_2">不然可能没法在通知里输配对码喵，到时候铲屎官就哭唧唧了喵 :(</string>
+    <string name="notification_adb_pairing_step_3">注意喵！「无线调试」左边有个按钮可以点喵，点一下就能开无线调试喵！</string>
+    <string name="notification_adb_pairing_step_4">回到 %1$s 启动它喵~</string>
+    <string name="notification_adb_pairing_network">%1$s 要访问局域网喵，这是网络权限管的喵。</string>
+    <string name="notification_adb_pairing_network_mi_note">某些系统（比如 MIUI）会限制应用在后台访问网络喵，好烦喵 :(</string>
+
+    <!-- 根启动 -->
+    <string name="home_root_title">Root 用户喵</string>
+    <string name="home_root_description">%1$s 可以开机自启喵。如果没自动启动的话请手动启动喵，别怪本喵喵~</string>
+    <string name="home_root_description_sui">如果用 Magisk 的话可以试试 %1$s 喵，对 root 用户来说更方便喵！</string>
+    <string name="home_root_start_button">启动喵！</string>
+    <string name="home_root_restart_button">重启喵！</string>
+
+    <!-- 应用管理 -->
+    <string name="home_apps_title">管理应用喵</string>
+    <string name="home_apps_description">点一下看看哪些应用有权限喵，一目了然喵~ (=^・ω・^=)</string>
+    <string name="home_apps_manage_button">管管它们喵</string>
+    <string name="home_apps_dialog_message">请求过或声明了 %1$s 的应用会出现在这里喵~</string>
+
+    <!-- 了解更多 -->
+    <string name="home_about_title">了解更多喵</string>
+    <string name="home_about_description">认识一下 %1$s 喵。</string>
+    <string name="home_about_learn_button">学习用 %1$s 开发喵</string>
+
+    <!-- ADB 权限受限 -->
+    <string name="home_adb_permission_title">还要再做一步喵…</string>
+    <string name="home_adb_permission_description">铲屎官的设备厂商限制了 ADB 权限喵，用 %1⁂ 的应用会少很多功能喵，本喵也很无奈喵 :(</string>
+    <string name="home_adb_permission_limited">ADB 权限被限制了喵</string>
+    <string name="home_adb_permission_limited_description">铲屎官的设备厂商很可能限制了 ADB 权限喵，导致用 %1$s 的应用功能不全喵。这个限制绕不过去喵，认命吧喵 :(</string>
+    <string name="home_adb_permission_limited_note">* 需要 %1$s 以 root 权限运行才行喵。</string>
+
+    <!-- 终端应用 -->
+    <string name="home_terminal_title">终端喵</string>
+    <string name="home_terminal_description">在终端应用里用 %1$s 喵~</string>
+    <string name="home_terminal_description_long">在铲屎官喜欢的终端应用里用 %1$s 跑命令喵，随心所欲喵~ ฅ^・ω・^ฅ</string>
+    <string name="home_terminal_step_1_title">第一步：导出喵</string>
+    <string name="home_terminal_step_1_message">先把文件导出到随便哪里喵。会得到两个文件喵：%1$s 和 %2$s 喵。</string>
+    <string name="home_terminal_step_1_message_warning">如果目标文件夹有同名文件会被覆盖喵！小心喵！</string>
+    <string name="home_terminal_step_1_button">导出文件喵</string>
+    <string name="home_terminal_step_2_title">第二步：编辑喵</string>
+    <string name="home_terminal_step_2_message">然后用文本编辑器打开编辑 %1$s 喵。</string>
+    <string name="home_terminal_step_2_message_example">比如喵，如果想在 %1$s 里用 %2$s，就把 %3$s 换成 %4$s 喵。</string>
+    <string name="home_terminal_step_3_title">第三步：使用喵</string>
+    <string name="home_terminal_step_3_message">最后喵，把文件移到终端应用能访问的地方喵，就能用 %1$s 了喵！大功告成喵！(≧▽≦)/</string>
+    <string name="home_terminal_step_3_message_tip">小提示喵：给 %1$s 加上执行权限放进 %2$s，就哪里都能用它了喵！</string>
+    <string name="home_terminal_message">有了 %1⁂ 喵，在任何终端应用里都能连上 %2⁂ 服务和它聊天了喵~</string>
+
+    <!-- 设置 -->
+    <string name="settings">设置喵</string>
+    <string name="settings_language">语言喵</string>
+    <string name="settings_dark_theme">外观喵</string>
+    <string name="settings_black_dark_theme">纯黑夜间模式喵</string>
+    <string name="settings_black_dark_theme_description">如果开了夜间模式就用纯黑喵，保护铲屎官的眼睛喵~ (=^・ω・^=)</string>
+    <string name="settings_start">启动喵</string>
+    <string name="settings_translation_title">翻译喵</string>
+    <string name="settings_translation_contributors">翻译贡献者喵</string>
+    <string name="settings_translation_contribute">帮本喵把 %s 翻译成铲屎官的语言喵！功德无量喵~ ฅ^・ω・^ฅ</string>
+    <string name="settings_start_on_boot">开机自启（root）喵</string>
+    <string name="settings_start_on_boot_description">有 root 的手机喵，%1$s 可以开机自启喵，很方便喵！</string>
+    <string name="settings_use_system_color">用系统颜色喵</string>
+    <string name="settings_about">关于喵</string>
+    <string name="settings_about_source_code">在 %s 看源码喵~</string>
+    <string name="settings_stop">停止 %1$s 喵</string>
+    <string name="settings_stop_description">%1⁂ 服务要停下来了喵。铲屎官确定吗喵？？(ﾟдﾟ)</string>
+
+    <!-- 通知 -->
+    <string name="notification_service_start_status">服务启停喵</string>
+    <string name="notification_service_start_status_channel">服务启停喵</string>
+    <string name="notification_service_starting">%1⁂ 服务正在启动喵…稍等喵~ (´・ω・`)</string>
+    <string name="notification_service_start_failed">%1⁂ 服务启动失败了喵！！呜呜呜 QAQ</string>
+    <string name="notification_service_start_failed_root">获取 root 权限失败了喵…今天运气不好喵 :(</string>
+    <string name="notification_service_running">正在运行喵！铲屎官可以放心了喵~ (=^・ω・^=)</string>
+
+    <!-- 无线调试配对通知 -->
+    <string name="notification_adb_pairing_action_input_code">输入配对码喵</string>
+    <string name="notification_adb_pairing_action_discovery">正在找配对服务喵</string>
+    <string name="notification_adb_pairing_action_discovery_done">找到配对服务了喵！(≧▽≦)</string>
+    <string name="notification_adb_pairing_action_discovery_stop">别找了喵</string>
+    <string name="notification_adb_pairing_action_pairing">正在配对喵…</string>
+    <string name="notification_adb_pairing_action_pairing_success">配对成功了喵！现在可以启动 %1⁂ 服务了喵！本喵很开心喵！(≧▽≦)/</string>
+    <string name="notification_adb_pairing_action_pairing_failed">配对失败了喵！！呜呜呜 QAQ</string>
+    <string name="notification_adb_pairing_action_retry">再试一次喵</string>
+
+    <!-- 权限 -->
+    <string name="permission_label">%1$s 喵</string>
+    <string name="permission_description">让应用使用 %1$s 喵~</string>
+    <string name="permission_group_label">%1$s 喵</string>
+    <string name="permission_group_description">@string/permission_label</string>
+    <string name="permission_template">允许 **%1$s** %2$s 喵？(ﾟдﾟ)</string>
+    <string name="permission_dialog_always_allow">永远允许喵</string>
+    <string name="permission_dialog_deny">不行喵！拒绝喵！(｀Д´)ノ</string>
+
+    <!-- 启动器 -->
+    <string name="launcher">%1$s 喵</string>
+    <string name="launcher_start_root_shell">正在启动 root Shell 喵…</string>
+    <string name="launcher_start_root_shell_failed">没有 root 权限或者这不是 root 手机喵，启动不了服务喵…本喵也无能为力喵 :(</string>
+
+    <!-- 对话框 -->
+    <string name="dialog_cannot_start_browser">打不开浏览器喵…呜喵 :(</string>
+    <string name="dialog_copied_to_clipboard">已经复制到剪贴板了喵：%s</string>
+    <string name="dialog_copied_to_clipboard_with_text">**%s** 已经在剪贴板里了喵！随便粘贴喵~ (=^・ω・^=)</string>
+
+    <!-- 旧版不兼容 -->
+    <string name="old_shizuku_not_support">%1⁂ 不支持新版 %2⁂ 喵。</string>
+    <string name="old_shizuku_not_support_description">旧 %1⁂ 从 2019 年 3 月就已经退役了喵，而且和新版 %1⁂ 不兼容喵。时过境迁喵… :(</string>
+    <string name="old_shizuku">%1⁂ 在找旧版 %2⁂ 喵。</string>
+    <string name="old_shizuku_description">**%1⁂** 支持新版 %2⁂ 喵，但它在找旧版 %2⁂ 喵。可能是因为还没更新喵，提醒一下铲屎官喵~</string>
+    <string name="old_shizuku_open_shizuku">打开 %1⁂ 喵</string>
+
+    <!-- 额外键 -->
+    <string name="home_wireless_adb">无线调试喵</string>
+    <string name="home_root">Root 喵</string>
+    <string name="home_adb">ADB 喵</string>
+
+    <!-- 翻译贡献者 -->
+    <string name="translation_contributors"></string>
+
+</resources>
