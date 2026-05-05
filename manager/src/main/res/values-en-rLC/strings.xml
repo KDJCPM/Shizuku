@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shizuku</string>
+
+    <!-- 主页 · 状态 -->
+    <string name="home_status_service_is_running">%1$s iz runnin 4 u!!1!</string>
+    <string name="home_status_service_not_running">%1$s iz NOT runnin :C</string>
+    <string name="home_status_service_version">Vershun %2$s, %1$s</string>
+    <string name="home_status_service_version_update"><![CDATA[Vershun %2$s, %1$s.<br>Restart 4 update 2 %3$s kthx]]></string>
+
+    <!-- 主页 · ADB 启动 -->
+    <string name="home_adb_title">Connect compewter 2 start!!</string>
+    <string name="home_adb_description">Ur fone iz not root, u need ADB 2 start %1$s. Every tiem u restart u gotta do dis agen lol.</string>
+    <string name="home_adb_button_view_help">See halp</string>
+    <string name="home_adb_button_view_help">See halp</string>
+    <string name="home_adb_button_view_command">See commandz</string>
+    <string name="home_adb_dialog_view_command_message"><![CDATA[Run dis command on ur compewter terminl:<br><br><font face="monospace">%1$s</font><br><br>* sum notes:<br>…]]></string>
+    <string name="home_adb_dialog_view_command_copy_button">COPPY</string>
+    <string name="home_adb_dialog_view_command_button_send">SEND IT</string>
+
+    <!-- 主页 · 无线调试 -->
+    <string name="home_wireless_adb_title">Wireless debug start!!</string>
+    <string name="home_wireless_adb_description">Android 11+ can start %1$s wif wireless debug, no compewter needed!! iz amazin :O</string>
+    <string name="home_wireless_adb_description_pre_11">B4 Android 11 u need compewter 2 start wireless debug. dat sux :C</string>
+    <string name="home_wireless_adb_view_guide_button">Step by step halp</string>
+
+    <!-- 无线调试对话框 -->
+    <string name="dialog_adb_discovery">Searchin 4 wireless debug service… iz finding it</string>
+    <string name="dialog_adb_discovery_message">Plz enable "Wireless debug" in "Devloper optionz". If it no find, try turn off n on agen.</string>
+    <string name="dialog_adb_port">Port</string>
+    <string name="dialog_adb_invalid_port">Port must be numbr between 1 n 65535. no put random stuff plz.</string>
+
+    <!-- 配对 -->
+    <string name="adb_pairing">Pairin</string>
+    <string name="dialog_adb_pairing_title">Pair wif device</string>
+    <string name="dialog_adb_pairing_discovery">Searchin 4 pairin service…</string>
+    <string name="dialog_adb_pairing_paring_code">Pairin code</string>
+    <string name="paring_code_is_wrong">Pairin code iz WRONG. y u do dis :C</string>
+    <string name="dialog_adb_pairing_cannot_connect">Cant connect 2 wireless debug service. oh noes!!</string>
+    <string name="dialog_adb_pairing_not_started">Wireless debug iz not startd. Note: b4 Android 11 u need compewter first.</string>
+    <string name="dialog_adb_pairing_message">Do dis 4 pairin: "Devloper optionz" → "Wireless debug" → "Pair device wif pairin code".</string>
+    <string name="dialog_adb_pairing_split_screen">Plz go 2 split screen mode first kthx.</string>
+    <string name="dialog_adb_pairing_split_screen_message">System wantz pairin dialog 2 stay visible, so u need split screen. sry :C</string>
+    <string name="dialog_adb_pairing_key_store_error">Cant make wireless debug key. sumthin iz wrong wif keystore.</string>
+    <string name="dialog_adb_pairing_start_first">Do pairin steps first!! no skip plz.</string>
+
+    <!-- 配对通知 -->
+    <string name="notification_adb_pairing_title">Pairin</string>
+    <string name="notification_adb_pairing_channel_name">Wireless debug pairin</string>
+    <string name="notification_adb_pairing_message">%1$s notificashun will halp u pair :3</string>
+    <string name="notification_adb_pairing_step_1">Go "Devloper optionz" → "Wireless debug", tap "Pair device wif pairin code".</string>
+    <string name="notification_adb_pairing_step_2">Put pairin code in notificashun 2 finish pairin. dont 4get!!</string>
+    <string name="notification_adb_pairing_warning">Pairin needz u 2 interakt wif %1$s notificashun. DONT hide it or u fail!!1!</string>
+    <string name="notification_adb_pairing_miui_warning">MIUI userz may need 2 switch notificashun style from "Notificashun bar" 2 "Android".</string>
+    <string name="notification_adb_pairing_miui_warning_2">Or u cant put pairin code in notificashun. den u sad :C</string>
+    <string name="notification_adb_pairing_step_3">PS: "Wireless debug" iz a button on da left!! tap it 2 enable wireless debug.</string>
+    <string name="notification_adb_pairing_step_4">Go bak 2 %1$s 2 start it :3</string>
+    <string name="notification_adb_pairing_network">%1$s needz 2 access local network. dat iz network permishun stuff.</string>
+    <string name="notification_adb_pairing_network_miui_note">Sum systemz (lyk MIUI) block apps from network when not in foreground. dat iz annoyin :C</string>
+
+    <!-- 根启动 -->
+    <string name="home_root_title">Root user</string>
+    <string name="home_root_description">%1$s can start at boot. If it no start automaticaly, plz start it manualy. no blame us lol.</string>
+    <string name="home_root_description_sui">If u use Magisk, try %1$s. iz way bettr 4 root userz :3</string>
+    <string name="home_root_start_button">START IT</string>
+    <string name="home_root_restart_button">RESTART</string>
+
+    <!-- 应用管理 -->
+    <string name="home_apps_title">App managz</string>
+    <string name="home_apps_description">Tap 2 see all apps dat haz permishun. iz all dere!!</string>
+    <string name="home_apps_manage_button">Managz dem</string>
+    <string name="home_apps_dialog_message">Appz dat asked 4 or declared %1$s will show up here :3</string>
+
+    <!-- 了解更多 -->
+    <string name="home_about_title">Learn moar</string>
+    <string name="home_about_description">Know %1$s.</string>
+    <string name="home_about_learn_button">Learn 2 dev wif %1$s</string>
+
+    <!-- ADB 权限受限 -->
+    <string name="home_adb_permission_title">U need 2 do 1 moar step.</string>
+    <string name="home_adb_permission_description">Ur device maker haz limited ADB permishun. Appz using %1$s will haz less stuff. sry :C</string>
+    <string name="home_adb_permission_limited">ADB permishun limited</string>
+    <string name="home_adb_permission_limited_description">Ur device maker most likely limited ADB permishun, so appz using %1$s dont werk fully. Dis cant be bypassd. it iz wat it iz :C</string>
+    <string name="home_adb_permission_limited_note">* Need %1$s 2 run wif root permishun.</string>
+
+    <!-- 终端应用 -->
+    <string name="home_terminal_title">Terminal</string>
+    <string name="home_terminal_description">Use %1$s in terminal app :3</string>
+    <string name="home_terminal_description_long">Use %1$s in ur favrit terminal app 2 run commandz. iz fun!!</string>
+    <string name="home_terminal_step_1_title">Step 1: Export</string>
+    <string name="home_terminal_step_1_message">First, export file 2 anywher. u will get 2 filez: %1$s n %2$s.</string>
+    <string name="home_terminal_step_1_message_warning">If da folder alredy haz same name file, it will be OVERWRITTEN. careful!!</string>
+    <string name="home_terminal_step_1_button">Export filez</string>
+    <string name="home_terminal_step_2_title">Step 2: Edit</string>
+    <string name="home_terminal_step_2_message">Den open wif text editor n edit %1$s.</string>
+    <string name="home_terminal_step_2_message_example">4 eg: if u want 2 use %2$s in %1$s, replace %3$s wif %4$s.</string>
+    <string name="home_terminal_step_3_title">Step 3: Use</string>
+    <string name="home_terminal_step_3_message">Last, move file 2 wer terminal app can reach, den u can use %1$s!! hooray!!</string>
+    <string name="home_terminal_step_3_message_tip">Pro tip: give %1$s exec permishun n put it in %2$s, den u can use it anywher :3</string>
+    <string name="home_terminal_message">Wif %1$s, in any terminal app, u can connect 2 %2$s service n talk 2 it :3</string>
+
+    <!-- 设置 -->
+    <string name="settings">Settinzz</string>
+    <string name="settings_language">Langwij</string>
+    <string name="settings_dark_theme">Appearinz</string>
+    <string name="settings_black_dark_theme">Pure black nite mode</string>
+    <string name="settings_black_dark_theme_description">If nite mode iz on, use pure black. iz good 4 ur eyez :3</string>
+    <string name="settings_start">Start</string>
+    <string name="settings_translation_title">Translatz</string>
+    <string name="settings_translation_contributors">Translatin hoomanz</string>
+    <string name="settings_translation_contribute">Halp us translat %s 2 ur langwij!! u will be hero :3</string>
+    <string name="settings_start_on_boot">Start at boot (root)</string>
+    <string name="settings_start_on_boot_description">On rootd fone, %1$s can start automaticaly at boot. iz convenint!!</string>
+    <string name="settings_use_system_color">Use system color</string>
+    <string name="settings_about">About</string>
+    <string name="settings_about_source_code">See source code at %s :3</string>
+    <string name="settings_stop">Stop %1$s</string>
+    <string name="settings_stop_description">%1$s service will stop. r u sure?? :O</string>
+
+    <!-- 通知 -->
+    <string name="notification_service_start_status">Service start/stop</string>
+    <string name="notification_service_start_status_channel">Service start/stop</string>
+    <string name="notification_service_starting">%1$s service startin… hold on!!</string>
+    <string name="notification_service_start_failed">%1$s service start FAILED!! oh noes :C</string>
+    <string name="notification_service_start_failed_root">Root permishun faild. dis iz bad day :C</string>
+    <string name="notification_service_running">Runnin!! u can relax now :3</string>
+
+    <!-- 无线调试配对通知 -->
+    <string name="notification_adb_pairing_action_input_code">Put pairin code</string>
+    <string name="notification_adb_pairing_action_discovery">Searchin 4 pairin service</string>
+    <string name="notification_adb_pairing_action_discovery_done">FOUND pairin service!! :D</string>
+    <string name="notification_adb_pairing_action_discovery_stop">Stop searchin</string>
+    <string name="notification_adb_pairing_action_pairing">Pairin in progress…</string>
+    <string name="notification_adb_pairing_action_pairing_success">PAIRIN SUCCES!! now u can start %1$s service :D</string>
+    <string name="notification_adb_pairing_action_pairing_failed">PAIRIN FAILD!! :C</string>
+    <string name="notification_adb_pairing_action_retry">Try agen</string>
+
+    <!-- 权限 -->
+    <string name="permission_label">%1$s</string>
+    <string name="permission_description">Let app use %1$s :3</string>
+    <string name="permission_group_label">%1$s</string>
+    <string name="permission_group_description">@string/permission_label</string>
+    <string name="permission_template">Let **%1$s** %2$s?? :O</string>
+    <string name="permission_dialog_always_allow">Alwayz allow</string>
+    <string name="permission_dialog_deny">NO!! deny!!</string>
+
+    <!-- 启动器 -->
+    <string name="launcher">%1$s</string>
+    <string name="launcher_start_root_shell">Startin root Shell…</string>
+    <string name="launcher_start_root_shell_failed">No root permishun or dis fone iz not rootd. cant start service. WAI :C</string>
+
+    <!-- 对话框 -->
+    <string name="dialog_cannot_start_browser">Cant start browser. oh noes!!</string>
+    <string name="dialog_copied_to_clipboard">COPPIED 2 clipbord: %s</string>
+    <string name="dialog_copied_to_clipboard_with_text">**%s** iz now in clipbord!! paste it anywher :3</string>
+
+    <!-- 旧版不兼容 -->
+    <string name="old_shizuku_not_support">%1$s no support da new %2$s.</string>
+    <string name="old_shizuku_not_support_description">Old %1$s iz ded since March 2019. n it iz not compatibl wif new %1$s. RIP :C</string>
+    <string name="old_shizuku">%1$s iz askin 4 old %2$s.</string>
+    <string name="old_shizuku_description">**%1$s** supportz da new %2$s, but it iz askin 4 old %2$s. probly cuz it haznt been upd8d. tell dem lol.</string>
+    <string name="old_shizuku_open_shizuku">Open %1$s</string>
+
+    <!-- 额外键 -->
+    <string name="home_wireless_adb">Wireless debug</string>
+    <string name="home_root">Root</string>
+    <string name="home_adb">ADB</string>
+
+    <!-- 翻译贡献者 -->
+    <string name="translation_contributors"></string>
+
+</resources>
