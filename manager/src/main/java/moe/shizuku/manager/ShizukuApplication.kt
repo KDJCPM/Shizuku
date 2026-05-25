@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import com.topjohnwu.superuser.Shell
+import moe.shizuku.manager.adb.AdbAutostartScheduler
 import moe.shizuku.manager.ktx.logd
 import moe.shizuku.manager.receiver.WifiStateReceiver
 import org.lsposed.hiddenapibypass.HiddenApiBypass
@@ -43,6 +44,7 @@ class ShizukuApplication : Application() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             WifiStateReceiver.register(this)
+            AdbAutostartScheduler.schedule(this)
         }
     }
 

@@ -3,6 +3,8 @@ package moe.shizuku.manager.adb
 import android.Manifest.permission.WRITE_SECURE_SETTINGS
 import android.content.Context
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Build
 import android.provider.Settings
 import android.util.Log
@@ -30,10 +32,25 @@ object AdbAutostart {
                 && !Shizuku.pingBinder()
     }
 
+    private fun isWifiConnected(context: Context): Boolean {
+        val cm = context.getSystemService(ConnectivityManager::class.java) ?: return false
+        val network = cm.activeNetwork ?: return false
+        val caps = cm.getNetworkCapabilities(network) ?: return false
+        return caps.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
+                && caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     fun start(context: Context, initialDelayMs: Long = 0L, onFinished: (() -> Unit)? = null) {
         if (!running.compareAndSet(false, true)) {
             Log.i(AppConstants.TAG, "adbAutostart: already running, skipping")
+            onFinished?.invoke()
+            return
+        }
+
+        if (!isWifiConnected(context)) {
+            Log.i(AppConstants.TAG, "adbAutostart: WiFi not connected, deferring to scheduler")
+            running.set(false)
             onFinished?.invoke()
             return
         }
