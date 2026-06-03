@@ -1,6 +1,6 @@
 name: App
 
-on:
+on:on
   push:
     paths-ignore:
       - '.github/ISSUE_TEMPLATE'
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout 
         uses: actions/checkout@v4
         with:
           submodules: 'recursive'
