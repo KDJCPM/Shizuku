@@ -1,8 +1,7 @@
 name: App
 
 on:
- workflow_dispatch:
- push:
+  push:
     paths-ignore:
       - '.github/ISSUE_TEMPLATE'
 
@@ -20,7 +19,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
       - name: Write key
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
         run: |
