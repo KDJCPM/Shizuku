@@ -20,14 +20,15 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Write key
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+      - name: Write key (Debug Keystore)
+        # 改为使用debug keystore，不再需要secret
         run: |
-          echo KEYSTORE_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }} > signing.properties
-          echo KEYSTORE_ALIAS=${{ secrets.KEYSTORE_ALIAS }} >> signing.properties
-          echo KEYSTORE_ALIAS_PASSWORD='${{ secrets.KEYSTORE_ALIAS_PASSWORD }}' >> signing.properties
-          echo KEYSTORE_FILE=../key.jks >> signing.properties
-          echo ${{ secrets.KEYSTORE }} | base64 --decode > key.jks
+          echo "使用Android Debug Keystore"
+          # 创建signing.properties使用debug配置
+          echo "KEYSTORE_PASSWORD=android" > signing.properties
+          echo "KEYSTORE_ALIAS=androiddebugkey" >> signing.properties
+          echo "KEYSTORE_ALIAS_PASSWORD=android" >> signing.properties
+          echo "KEYSTORE_FILE=$ANDROID_HOME/debug.keystore" >> signing.properties
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -43,8 +44,10 @@ jobs:
           echo 'android.native.buildOutput=verbose' >> gradle.properties
           echo 'org.gradle.caching=true' >> gradle.properties
           echo 'org.gradle.parallel=true' >> gradle.properties
-          ./gradlew :manager:assemble
-          releaseName=`ls manager/build/outputs/apk/release/shizuku*-v*-release.apk | awk -F '(/|-release.apk)' '{print $6}'` && echo "releaseName=$releaseName" >> $GITHUB_OUTPUT
+          # 改为构建debug版本（或仍构建release但使用debug签名）
+          ./gradlew :manager:assembleDebug
+          # 修改文件路径匹配debug输出
+          releaseName=`ls manager/build/outputs/apk/debug/shizuku*-v*-debug.apk | awk -F '(/|-debug.apk)' '{print $6}'` && echo "releaseName=$releaseName" >> $GITHUB_OUTPUT
       - name: Upload release
         if: success()
         uses: actions/upload-artifact@v4
